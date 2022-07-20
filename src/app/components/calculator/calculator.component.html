@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="first"> First number </label>
+    <input type="number" name="first" [(ngModel)]="first" id="first" placeholder="first number">
+  </div>
+  <div>
+    <label> Second number </label>
+    <input type="number" name="second" [(ngModel)]="second" id="second" placeholder="second number">
+  </div>
+  <input type="submit" value="calculate">
+  <div>
+  <label> Result </label>
+    <p>{{resultDisplay}}</p>
+  </div>
+</form>

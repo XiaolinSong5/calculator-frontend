@@ -1,0 +1,22 @@
+{"calculations":[
+  {
+    "id": 1,
+    "first": 2,
+    "second": 5,
+    "result": 7.0
+  },
+  {
+    "id": 2,
+    "first": 6,
+    "second": 5,
+    "result": 11.0
+  },
+  {
+    "id": 3,
+    "first": 6,
+    "second": 9,
+    "result": 15.0
+  }
+]
+
+}
