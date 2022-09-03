@@ -14,6 +14,10 @@ export class CalculatorComponent implements OnInit {
   result: number=0 ;
   first: number = 0;
   second: number = 0;
+  name: string = '';
+  fullname: string = '';
+  description: string = '';
+  ownerType: string = '';
   resultDisplay: string = "0.0";
   subscription : Subscription;
 
@@ -34,6 +38,10 @@ export class CalculatorComponent implements OnInit {
       id: 0,
       firstNumber: this.first,
       secondNumber: this.second,
+      name: this.name,
+      fullname: this.fullname,
+      description: this.description,
+      ownerType: this.ownerType,
       result: 0
     }
     this.onAdd.emit(newCalculation);
@@ -44,6 +52,10 @@ export class CalculatorComponent implements OnInit {
     this.id = 0;
     this.first =0;
     this.second = 0;
+    this.name = '';
+    this.fullname = '';
+    this.description = '';
+    this.ownerType = '';
     this.result = 0;
   }
 

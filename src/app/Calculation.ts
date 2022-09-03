@@ -3,4 +3,8 @@ export interface Calculation {
   firstNumber: number;
   secondNumber: number;
   result: number;
+  name: string;
+  fullname: string;
+  description: string;
+  ownerType: string;
 }
