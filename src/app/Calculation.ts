@@ -1,7 +1,7 @@
 export interface Calculation {
   id: number;
   firstNumber: number;
-  secondNumber: number;
+  phase: string;
   result: number;
   name: string;
   fullname: string;

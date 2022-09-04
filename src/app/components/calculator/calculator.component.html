@@ -1,15 +1,16 @@
 <form (ngSubmit)="onSubmit()">
-  <div>
-    <label for="first"> First number </label>
-    <input type="number" name="first" [(ngModel)]="first" id="first" placeholder="first number">
-  </div>
-  <div>
-    <label> Second number </label>
-    <input type="number" name="second" [(ngModel)]="second" id="second" placeholder="second number">
-  </div>
+  <!--<div>-->
+    <!--<label for="first"> First number </label>-->
+    <!--<input type="number" name="first" [(ngModel)]="first" id="first" placeholder="first number">-->
+  <!--</div>-->
+
   <div>
   <label for="name"> name </label>
   <input type="text" name="name" [(ngModel)]="name" id="name" placeholder="name">
+  </div>
+  <div>
+    <label> phase </label>
+    <input type="text" name="phase" [(ngModel)]="phase" id="phase" placeholder="phase">
   </div>
   <div>
     <label> fullname </label>
@@ -27,9 +28,5 @@
     <label> ticketType </label>
     <input type="text" name="ticketType" [(ngModel)]="ticketType" id="ticketType" placeholder="ticketType">
   </div>
-  <input type="submit" value="calculate">
-  <div>
-  <label> Result </label>
-    <p>{{resultDisplay}}</p>
-  </div>
+  <input type="submit" value="go">
 </form>

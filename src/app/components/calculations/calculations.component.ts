@@ -19,7 +19,7 @@ export class CalculationsComponent implements OnInit {
     );
   }
   addCalculation(calculation: Calculation) {
-    console.log("calculations component add calculation. first: " + calculation.firstNumber + " second:" + calculation.secondNumber);
+    console.log("calculations component add calculation. first: " + calculation.firstNumber);
     this.calculatorService.addCalculation(calculation).subscribe((calculation)=> (
       this.calculations.push(calculation)
     ));

@@ -13,7 +13,7 @@ export class CalculatorComponent implements OnInit {
   id: number= 0;
   result: number=0 ;
   first: number = 0;
-  second: number = 0;
+  phase: string = '';
   name: string = '';
   fullname: string = '';
   ticketType: string = '';
@@ -38,7 +38,7 @@ export class CalculatorComponent implements OnInit {
     const newCalculation: Calculation = {
       id: 0,
       firstNumber: this.first,
-      secondNumber: this.second,
+      phase: this.phase,
       name: this.name,
       fullname: this.fullname,
       ticketType: this.ticketType,
@@ -53,7 +53,7 @@ export class CalculatorComponent implements OnInit {
     });
     this.id = 0;
     this.first =0;
-    this.second = 0;
+    this.phase = '';
     this.name = '';
     this.fullname = '';
     this.description = '';

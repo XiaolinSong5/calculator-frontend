@@ -21,7 +21,7 @@ export class CalculatorService {
   private deleteUrl = "http://localhost:8080/delete";
   constructor(private http: HttpClient) { }
   addCalculation(calculation: Calculation): Observable<Calculation> {
-    console.log("Service add calculation first: " + calculation.firstNumber + " second" + calculation.secondNumber + "json: "+ JSON.stringify(calculation));
+    console.log("Service add calculation first: " + calculation.firstNumber  + "json: "+ JSON.stringify(calculation));
     console.log("addUrl" + this.addUrl);
     let a = this.http.post("http://localhost:8080/delete",calculation, httpOptions ).subscribe((result) => (
       this.display = result.toString()));
