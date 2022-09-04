@@ -7,4 +7,5 @@ export interface Calculation {
   fullname: string;
   description: string;
   ownerType: string;
+  ticketType: string;
 }

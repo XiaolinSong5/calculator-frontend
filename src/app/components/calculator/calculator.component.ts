@@ -16,6 +16,7 @@ export class CalculatorComponent implements OnInit {
   second: number = 0;
   name: string = '';
   fullname: string = '';
+  ticketType: string = '';
   description: string = '';
   ownerType: string = '';
   resultDisplay: string = "0.0";
@@ -40,6 +41,7 @@ export class CalculatorComponent implements OnInit {
       secondNumber: this.second,
       name: this.name,
       fullname: this.fullname,
+      ticketType: this.ticketType,
       description: this.description,
       ownerType: this.ownerType,
       result: 0
@@ -56,6 +58,7 @@ export class CalculatorComponent implements OnInit {
     this.fullname = '';
     this.description = '';
     this.ownerType = '';
+    this.ticketType = '';
     this.result = 0;
   }
 
