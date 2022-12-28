@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Calculation} from "../../Calculation";
+import {Theme} from "../../theme";
 import {CalculatorService} from "../../services/calculator.service";
 
 @Component({
@@ -8,7 +8,7 @@ import {CalculatorService} from "../../services/calculator.service";
   styleUrls: ['./calculations.component.css']
 })
 export class CalculationsComponent implements OnInit {
-  calculations: Calculation[] = [];
+  calculations: Theme[] = [];
   constructor(private  calculatorService: CalculatorService) { }
 
   ngOnInit(): void {
@@ -18,8 +18,8 @@ export class CalculationsComponent implements OnInit {
       }
     );
   }
-  addCalculation(calculation: Calculation) {
-    console.log("calculations component add calculation. first: " + calculation.firstNumber);
+  addCalculation(calculation: Theme) {
+    console.log("calculations component add calculation: " + calculation);
     this.calculatorService.addCalculation(calculation).subscribe((calculation)=> (
       this.calculations.push(calculation)
     ));

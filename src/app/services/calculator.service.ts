@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable, Subject} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Calculation} from "../Calculation";
+import {Theme} from "../theme";
 const httpOptions = {
   headers: {
     "Content-type": "application/json",
@@ -22,8 +23,8 @@ export class CalculatorService {
   private deleteUrl = "http://localhost:8080/delete";
   //private dialgueUrl = "http://localhost:8001/dialogue-engine/dialogues/2f50050c-cc25-4e9f-ade5-635b2b284b30";
   constructor(private http: HttpClient) { }
-  addCalculation(calculation: Calculation): Observable<Calculation> {
-    console.log("Service add calculation first: " + calculation.firstNumber  + "json: "+ JSON.stringify(calculation));
+  addCalculation(calculation: Theme): Observable<Theme> {
+    console.log("Service add calculation: "  + "json: "+ JSON.stringify(calculation));
     console.log("addUrl" + this.addUrl);
     // this.http.get<any>('http://localhost:8001/dialogue-engine/dialogues/2f50050c-cc25-4e9f-ade5-635b2b284b30').subscribe(data => {
     //   console.log("dialogue: " + data);
@@ -43,8 +44,8 @@ export class CalculatorService {
     //   }
     // );
   }
-  getCalculations(): Observable<Calculation[]> {
-    return this.http.get<Calculation[]>(this.componentsUrl);
+  getCalculations(): Observable<Theme[]> {
+    return this.http.get<Theme[]>(this.componentsUrl);
   }
   getResult(): Observable<any> {
     return this.subject.asObservable();

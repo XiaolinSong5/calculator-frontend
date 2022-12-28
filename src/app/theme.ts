@@ -1,4 +1,4 @@
-export interface Component {
+export interface Theme {
   name: string;
   fullname: string;
   description: string;
