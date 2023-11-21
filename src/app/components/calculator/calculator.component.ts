@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {CalculatorService} from "../../services/calculator.service";
 import {Calculation} from "../../Calculation";
 import {Subscription} from "rxjs";
@@ -6,9 +6,11 @@ import {Subscription} from "rxjs";
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
-  styleUrls: ['./calculator.component.css']
+  styleUrls: ['./calculator.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class CalculatorComponent implements OnInit {
+  firstName: string;
   @Output() onAdd: EventEmitter<Calculation> = new EventEmitter<Calculation>();
   id: number= 0;
   result: number=0 ;
@@ -26,6 +28,8 @@ export class CalculatorComponent implements OnInit {
     this.subscription = this.calculatorService.getResult().subscribe(value => {
       this.resultDisplay = value;
     });
+    this.firstName ='Xiaolin';
+    setTimeout(()=> this.firstName="something else", 5000);
   }
 
   ngOnInit(): void {

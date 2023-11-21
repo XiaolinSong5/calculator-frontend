@@ -12,15 +12,15 @@ export class CalculationsComponent implements OnInit {
   constructor(private  calculatorService: CalculatorService) { }
 
   ngOnInit(): void {
-    this.calculatorService.getCalculations().subscribe((calculations)=> {
-        console.log("calculations size: " + calculations.length + " with " + calculations.join());
-        this.calculations = calculations;
+    this.calculatorService.getCalculations().subscribe((themes)=> {
+        console.log("calculations size: " + themes.length + " with " + themes.join());
+        this.calculations = themes;
       }
     );
   }
-  addCalculation(calculation: Theme) {
-    console.log("calculations component add calculation: " + calculation);
-    this.calculatorService.addCalculation(calculation).subscribe((calculation)=> (
+  addCalculation(theme: Theme) {
+    console.log("calculations component add calculation: " + theme);
+    this.calculatorService.addCalculation(theme).subscribe((calculation)=> (
       this.calculations.push(calculation)
     ));
   }
