@@ -1,10 +1,11 @@
-import {Component, EventEmitter, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {CalculatorService} from "../../services/calculator.service";
 import {Calculation} from "../../Calculation";
 import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-calculator',
+  changeDetection: ChangeDetectionStrategy.OnPush
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.css'],
   encapsulation: ViewEncapsulation.ShadowDom
