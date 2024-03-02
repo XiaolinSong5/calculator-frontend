@@ -5,7 +5,7 @@ import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-calculator',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.css'],
   encapsulation: ViewEncapsulation.ShadowDom
