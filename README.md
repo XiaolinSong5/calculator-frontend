@@ -28,4 +28,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Start db server
 npm run server
- 
+
+ng update @angular/core@15 @angular/cli@15 
+
+SpringBoot: 
+http://localhost:8080/calculations
+http://localhost:8080/components
+
+Dynamodb admin:
+http://localhost:8001/tables/Component
