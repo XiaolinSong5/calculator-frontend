@@ -1,4 +1,12 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  signal,
+  ViewEncapsulation
+} from '@angular/core';
 import {CalculatorService} from "../../services/calculator.service";
 import {Calculation} from "../../Calculation";
 import {Subscription} from "rxjs";
@@ -34,6 +42,9 @@ export class CalculatorComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const count = signal(0);
+    count.set(5);
+    console.log("count is: " + count());
     // this.calculatorService.add().subscribe((aPair) =>
     //   this.result = aPair.result
     // );
