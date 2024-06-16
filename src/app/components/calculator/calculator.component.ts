@@ -1,7 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  EventEmitter,
+  EventEmitter, Injector,
   OnInit,
   Output,
   signal,
@@ -10,6 +10,7 @@ import {
 import {CalculatorService} from "../../services/calculator.service";
 import {Calculation} from "../../Calculation";
 import {Subscription} from "rxjs";
+import {toObservable} from "@angular/core/rxjs-interop";
 
 @Component({
   selector: 'app-calculator',
@@ -33,7 +34,7 @@ export class CalculatorComponent implements OnInit {
   resultDisplay: string = "0.0";
   subscription : Subscription;
 
-  constructor(private calculatorService: CalculatorService) {
+  constructor(private calculatorService: CalculatorService, private injector: Injector) {
     this.subscription = this.calculatorService.getResult().subscribe(value => {
       this.resultDisplay = value;
     });
@@ -42,9 +43,20 @@ export class CalculatorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const count = signal(0);
-    count.set(5);
-    console.log("count is: " + count());
+    const numbers = signal(0);
+    numbers.set(1);
+    numbers.set(2);
+    numbers.set(3);
+    const numbers$ = toObservable(numbers, {
+      injector: this.injector
+    })
+    numbers.set(4);
+    numbers$.subscribe(value => {
+      console.log('numbers$', value);
+    })
+  numbers.set(5);
+
+    //result in console is 5
     // this.calculatorService.add().subscribe((aPair) =>
     //   this.result = aPair.result
     // );
